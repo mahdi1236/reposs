@@ -1,0 +1,48 @@
+<!-- Upload  -->
+<div class="row">
+  <div class="col-6">
+<form id="file-upload-form" class="uploader">
+    <input id="file-upload" type="file" name="fileUpload" accept=".xls,.xlsx"  (change)="fileUpload($event)"  hidden/>
+  
+    <label for="file-upload" id="file-drag">
+      <img id="file-image" src="#" alt="Preview" class="hidden">
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div>Select a file or drag here</div>
+        <div id="notimage" class="hidden">Please select an image</div>
+        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+      </div>
+      <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+          <span>0</span>%
+        </progress>
+      </div>
+    </label>
+  </form>
+  <div>
+ <!--<pre>{{convertedJson}}</pre>-->
+  </div>
+</div>
+</div>
+<button (click)="toggleTableau()" class="custom-button">Afficher le tableau</button>
+
+<table *ngIf="afficherTableau" class="custom-table">
+  <thead>
+    <tr>
+      <th>Intervenant</th>
+      <th>Charge en ligne</th>
+      <th>Charge sur place</th>
+      <th>Charge Totale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of charge_en_ligne | keyvalue">
+      <td>{{ item.key }}</td>
+      <td>{{ item.value.toFixed(2) }}</td>
+      <td>{{ charge_sur_place[item.key].toFixed(2) }}</td> 
+      <td>{{ totale[item.key].toFixed(2) }}</td> 
+    </tr>
+  </tbody>
+</table>
+

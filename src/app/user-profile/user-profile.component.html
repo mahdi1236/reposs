@@ -1,0 +1,86 @@
+<br>
+<br>
+<br>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card custom-card">
+            <div class="card-body">
+    <div class="row"> 
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Créer un Formulaire</h2>
+                    <form [formGroup]="addoffre" (ngSubmit)="submit()">
+                        <!-- Form content here -->
+                        <!-- Première ligne -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputId">ID</label>
+                                <input type="text" class="form-control" id="inputId" placeholder="ID" formControlName="id">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputReference">Référence</label>
+                                <input type="text" class="form-control" id="inputReference" placeholder="Référence" formControlName="reference">
+                            </div>
+                        </div>
+                        <!-- Deuxième ligne -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputTitle">Titre</label>
+                                <input type="text" class="form-control" id="inputTitle" placeholder="Titre" formControlName="titre">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputCategories">Catégories</label>
+                                <input type="text" class="form-control" id="inputCategories" placeholder="Catégories" formControlName="categories">
+                            </div>
+                        </div>
+                        <!-- Troisième ligne -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputDatePublication">Date de Publication</label>
+                                <input type="date" class="form-control" id="inputDatePublication" formControlName="date_publication">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputDateLimite">Date Limite</label>
+                                <input type="date" class="form-control" id="inputDateLimite" formControlName="date_limite">
+                            </div>
+                        </div>
+                        <!-- Quatrième ligne -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputNomClient">Nom du Client</label>
+                                <input type="text" class="form-control" id="inputNomClient" placeholder="Nom du Client">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPays">Pays</label>
+                                <select id="inputPays" class="form-control">
+                                    <option selected>Choisir...</option>
+                                    <!-- Ajoutez ici la liste des pays du monde -->
+                                    <option>France</option>
+                                    <option>Canada</option>
+                                    <option>États-Unis</option>
+                                    <!-- Vous pouvez ajouter plus d'options ici -->
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Soumettre</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Télécharger le PDF</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="pdfFile">Sélectionner un fichier PDF</label>
+                            <input type="file" class="form-control-file" >
+                        </div>
+                        <button type="submit" class="btn btn-primary">Joindre le PDF</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
